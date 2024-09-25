@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import { Stack, TextField } from '@mui/material';
-import { addPost } from '@/server/action';
 
 const style = {
   position: 'absolute',
@@ -38,20 +37,20 @@ export default function ModalImport() {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <form action={addPost}>
+        <form>
         <Box sx={{ ...style, width: 400}}>
           <h2 id="parent-modal-title">Please enter your information</h2>
           
           <Box display={'flex'} gap={2}>
-          <TextField id="outlined-basic"name='name'
+          <TextField id="outlined-basic"name='name' type='text'
           label="Name" variant="outlined" margin={'normal'}/>
-          <TextField id="outlined-basic" name='Phonenumber'
+          <TextField id="outlined-basic" name='Phonen umber' type='text'
           label="Phonenumber" variant="outlined" margin={'normal'}/>
           </Box>
         
           <Box display={'flex'} gap={2}>
-          <TextField id="outlined-basic" name='dateOfBirth' label="Date of birth" variant="outlined" margin={'normal'}/>
-          <TextField id="outlined-basic" name='email' label="email" variant="outlined" margin={'normal'}/>
+          <TextField id="outlined-basic" helperText='date Of Birth' name='dateOfBirth' type='date' variant="outlined" margin={'normal'}/>
+          <TextField id="outlined-basic" name='email'type='text' label="email" variant="outlined" margin={'normal'}/>
           </Box>
         
 
