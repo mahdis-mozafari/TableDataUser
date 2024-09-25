@@ -7,20 +7,19 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { getPosts } from '@/_actions/postAction';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24),
-  createData('Ice cream sandwich', 237, 9.0, 37),
-  createData('Eclair', 262, 16.0, 24),
-  createData('Cupcake', 305, 3.7, 67),
-  createData('Gingerbread', 356, 16.0, 49),
-];
 
-export default function BasicTable() {
+export default async function BasicTable() {
+
+  //‍! To comment on lines 17 and 19 to 21 and 35 to 47, please read the readme of the file.
+  // const {data, errMsg} =await getPosts()
+
+  // if(errMsg){
+  //   return <h1>{errMsg}</h1>
+  // }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -33,19 +32,18 @@ export default function BasicTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* {rows.map((row) => (
+          {/* {data.map((item) => (
             <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
+              key={item.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >
               <TableCell component="th" scope="row">
-                {row.name}
+                {item.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell> */}
-              {/* <TableCell align="right">{row.protein}</TableCell> */}
-            {/* </TableRow>
+              <TableCell align="right">{item.email}</TableCell>
+              <TableCell align="right">{item.phoneNumber}</TableCell>
+              <TableCell align="right">{row.dateOfBirth}</TableCell> 
+              
+             </TableRow>
           ))} */}
         </TableBody>
       </Table>
